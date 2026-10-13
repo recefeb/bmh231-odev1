@@ -13,6 +13,10 @@ const sunucu = http.createServer((istek, yanit) => {
         yanit.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
         yanit.end('<h1>Hakkımda</h1><p>Ad Soyad: Recep Efe Bıçakçı <br> Üniversite: Yozgat Bozok Üniversitesi <br> Bölüm: Bilgisayar Mühendisliği</p><a href="/">Anasayfa</a>');
 
+    } else if (istek.url === '/api/ders') {
+        const ders = { kod: 'BMH231', ad: 'Web Programlama', gun: 'Cuma' };
+        yanit.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+        yanit.end(JSON.stringify(ders));
     } else {
         yanit.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
         yanit.end('Sayfa bulunamadı');
