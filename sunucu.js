@@ -9,7 +9,7 @@ const sunucu = http.createServer((istek, yanit) => {
         yanit.end('Yöntem desteklenmiyor');
     } else if (istek.url === '/') {
         yanit.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
-        yanit.end('<h1>Ana Sayfa</h1><a href="/hakkimda">Hakkımda</a>');
+        yanit.end('<h1>Web Programlama Ödevi</h1><a href="/hakkimda">Hakkımda</a>');
     } else if (istek.url === '/hakkimda') {
         yanit.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
         yanit.end('<h1>Hakkımda</h1><p>Ad Soyad: Recep Efe Bıçakçı <br> Yaş:20 <br> Üniversite: Yozgat Bozok Üniversitesi <br> Bölüm: Bilgisayar Mühendisliği <br> Ders: Web Programlama</p><a href="/">Anasayfa</a>');
